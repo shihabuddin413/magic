@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Letter for My Picchi ❤️</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <style>
+
+        
+
+
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
+
+        .love-letter {
+            font-family: 'dancing script', cursive;
+            font-size: 20px;
+            color: #fff;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 500px;
+            margin: 20px auto;
+            background-color: rgb(131, 0, 22);
+            line-height: 1.1;
+            position: relative;
+            z-index: 2;
+        }
+
+      
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+            background-color: #fde4e4;
+            padding: 10px;
+            padding-top: 10vh;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+        }
+
+        .envelope-container {
+            position: relative;
+            width: calc(100vw - 10px); /* 20px space on each side */
+            height: calc(100vh - 10vh); /* 20px space on top and bottom */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .envelope {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            border-radius: 10px;
+            transition: transform 0.3s;
+            z-index:1;
+        }
+
+        .glassmorphism {
+            background: rgba(197, 51, 155, 0.501); /* Transparent Pink */
+            border-radius: 15px;
+            backdrop-filter: blur(5px); /* Blur Effect */
+            -webkit-backdrop-filter: blur(5px); /* Safari Support */
+            border: 4px solid rgba(255, 105, 180); /* Soft Pink Border */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light Shadow */
+        }
+
+
+        /* Envelope Flap */
+        .flap {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background: linear-gradient(180deg, #ffcdf7, rgb(197, 51, 155));           
+            
+            transition: transform 0.8s ease-in-out;
+            
+        }
+
+        .bottom-text {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            color: white;
+            font-size: 16px;
+        }
+
+        /* Letter (Initially Hidden) */
+        .letter {
+            position: relative;
+            top: 60%; /* Moves letter closer to top of envelope */
+            width: 85%; /* Slightly bigger letter */
+            height: 90%; /* Bigger height for better readability */
+            background: #ffffff00;
+            border-radius: 10px;
+            padding: 10px;
+            text-align: justify;
+            font-size: 16px; /* Bigger font size */
+            line-height: 1;
+            /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+            opacity: 0;
+            transition: transform 0.8s ease-in-out, opacity 0.8s;
+        }
+
+        .heart {
+            color: red;
+        }
+
+        /* Open Animation */
+        .open .flap {
+            clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+            transform: rotateX(180deg);
+        }
+
+        .open .letter {
+            transform: translateY(-60%);
+            opacity: 2;
+            z-index:2;
+        }
+
+        .photo-box {
+            position: relative;
+            width: 200px; /* Increased size */
+            height: 240px;
+            left:30px;
+            margin-bottom: 10px;
+            border-radius: 15px;
+            overflow: hidden;
+            border: 3px solid #ff6699;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(255, 255, 255, 0);
+        }
+
+        .photo-box img {
+            width: 100%; /* Make the image a bit smaller */
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        /* Love Icons Around the Photo */
+        .love-icon {
+            position: absolute;
+            font-size: 50px; /* Bigger Icons */
+            color: red;
+        }
+
+        /* Top Left */
+        .love-icon.top-left {
+            top: -15px;
+            left: -15px;
+        }
+
+        /* Top Right */
+        .love-icon.top-right {
+            top: -15px;
+            right: -15px;
+        }
+
+        /* Bottom Left */
+        .love-icon.bottom-left {
+            bottom: -20px;
+            left: -50px;
+        }
+
+        /* Bottom Right */
+        .love-icon.bottom-right {
+            bottom: -15px;
+            right: -15px;
+        }
+
+
+         /*
+        .photo-box {
+            width: 100%; 
+            height: 100%;
+            display: flex;
+            justify-content: center; 
+            align-items: center; 
+            
+            border-radius: 10px; 
+            overflow: hidden;         
+            margin-bottom: 10px;
+        }
+
+        .photo-box img {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+            width: 140px;
+            height:180px; 
+            border: 2px solid #ff6699; 
+            object-fit: cover; 
+        }
+
+        
+        */
+
+    </style>
+</head>
+<body>
+
+    
+
+    <div class="envelope-container" onclick="toggleEnvelope()">
+        
+        <div class="envelope glassmorphism" id="envelope">
+
+            <div class="flap ">
+                <p class="bottom-text">
+                    <i class="material-icons" style="font-size:100px;">email</i>
+                    <br><br>
+                    <span class="heart" >❤️</span> 
+                    1 UNREAD LETTER <br>FOR YOU NADIA 
+                    <span class="heart">❤️</span>
+                    <br>
+                    Click to open...
+                </p>
+            </div>
+            <div class="letter">
+                <div class="love-letter">
+                    <div class="photo-box">
+                        <img src="love.jpg">
+                        <span class="love-icon top-left">❤️</span>
+                        <span class="love-icon top-right">💖</span>
+                        <span class="love-icon bottom-left">💕</span>
+                        <span class="love-icon bottom-right">💘</span>
+                    </div>
+                    <br>
+                    <b>My Picchi <span class="heart">❤️</span> Beautiful Sweetheart Nadia,</b>
+                    <p>
+                        I wanted to write you a letter full of love. I know it's silly, but I'd try anyway...
+                    </p>
+                    <p>
+                        You are my happiness,<br>
+                        My heart’s desire,<br>
+                        My everlasting flame (which will never burn),<br>
+                        You are such a gift to me,<br>
+                        I want you by my side every moment, every second!
+                    </p>
+                    <b>I Love my Picchi <span class="heart">❤️</span> Nadia ta!</b>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleEnvelope() {
+            document.getElementById('envelope').classList.toggle('open');
+        }
+
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.classList.add("heart-float");
+            heart.innerHTML = "❤️";
+            document.body.appendChild(heart);
+
+            // Random position
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = Math.random() * 2 + 3 + "s"; // Random speed
+
+            // Remove heart after animation
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+
+        // Generate 100 hearts per second
+        setInterval(() => {
+            for (let i = 0; i < 10; i++) { // Adjust the number if needed
+                createHeart();
+            }
+        }, 100);
+
+        // CSS for floating hearts
+        const style = document.createElement("style");
+        style.innerHTML = `
+            .heart-float {
+                position: absolute;
+                font-size: ${Math.random() * 20 + 10}px;
+                opacity: 0.6;
+                top: 100vh;
+                animation: float-up 5s linear infinite;
+            }
+
+            @keyframes float-up {
+                0% { transform: translateY(0); opacity: 1; }
+                100% { transform: translateY(-100vh); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
+
+
+        
+    </script>
+
+</body>
+</html>
